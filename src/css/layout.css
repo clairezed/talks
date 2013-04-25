@@ -75,11 +75,11 @@ body {
 /*
  * Controls
  */
-.reveal .controls div.navigate-top.enabled,
-.reveal .controls div.navigate-top{
+.reveal .controls div.navigate-up.enabled,
+.reveal .controls div.navigate-up{
   border-bottom-color: rgba(255, 140, 0, .7);
 }
-.reveal .controls div.navigate-top.enabled:hover{
+.reveal .controls div.navigate-up.enabled:hover{
   border-bottom-color: darkorange;
 }
 
@@ -91,11 +91,11 @@ body {
   border-left-color: darkorange;
 }
 
-.reveal .controls div.navigate-bottom.enabled,
-.reveal .controls div.navigate-bottom{
+.reveal .controls div.navigate-down.enabled,
+.reveal .controls div.navigate-down{
   border-top-color: rgba(255, 140, 0, .7);
 }
-.reveal .controls div.navigate-bottom.enabled:hover{
+.reveal .controls div.navigate-down.enabled:hover{
   border-top-color: darkorange;
 }
 
