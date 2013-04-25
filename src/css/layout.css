@@ -75,6 +75,7 @@ body {
 /*
  * Controls
  */
+.reveal .controls div.navigate-top.enabled,
 .reveal .controls div.navigate-top{
   border-bottom-color: rgba(255, 140, 0, .7);
 }
@@ -82,6 +83,7 @@ body {
   border-bottom-color: darkorange;
 }
 
+.reveal .controls div.navigate-right.enabled,
 .reveal .controls div.navigate-right{
   border-left-color: rgba(255, 140, 0, .7);
 }
@@ -89,6 +91,7 @@ body {
   border-left-color: darkorange;
 }
 
+.reveal .controls div.navigate-bottom.enabled,
 .reveal .controls div.navigate-bottom{
   border-top-color: rgba(255, 140, 0, .7);
 }
@@ -96,6 +99,7 @@ body {
   border-top-color: darkorange;
 }
 
+.reveal .controls div.navigate-left.enabled,
 .reveal .controls div.navigate-left{
   border-right-color: rgba(255, 140, 0, .7);
 }
