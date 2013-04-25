@@ -2,7 +2,7 @@ Reveal.initialize({
   width: 1024,
   height: 728,
 
-  controls: false,
+  controls: true,
   progress: true,
   history: true,
   center: true,

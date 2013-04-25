@@ -71,3 +71,34 @@ body {
 .reveal .progress span{
   background: darkorange;
 }
+
+/*
+ * Controls
+ */
+.reveal .controls div.navigate-top{
+  border-bottom-color: rgba(255, 140, 0, .7);
+}
+.reveal .controls div.navigate-top.enabled:hover{
+  border-bottom-color: darkorange;
+}
+
+.reveal .controls div.navigate-right{
+  border-left-color: rgba(255, 140, 0, .7);
+}
+.reveal .controls div.navigate-right.enabled:hover{
+  border-left-color: darkorange;
+}
+
+.reveal .controls div.navigate-bottom{
+  border-top-color: rgba(255, 140, 0, .7);
+}
+.reveal .controls div.navigate-bottom.enabled:hover{
+  border-top-color: darkorange;
+}
+
+.reveal .controls div.navigate-left{
+  border-right-color: rgba(255, 140, 0, .7);
+}
+.reveal .controls div.navigate-left.enabled:hover{
+  border-right-color: darkorange;
+}
