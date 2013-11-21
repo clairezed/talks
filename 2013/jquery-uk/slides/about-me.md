@@ -1,9 +1,10 @@
-![](images/avatar.jpeg)
+![](../avatar.jpg)
 
 ## Thomas Parisot
 
-*Frontend / JavaScript Engineer*<br>
-[BBC R&D](http://www.bbc.co.uk/rd)
+Frontend / JavaScript Engineer
+
+[![BBC R&D](../RD-logo_500.png)](http://www.bbc.co.uk/rd)
 
 <br>
 
