@@ -3,5 +3,4 @@
 
 ## un fichier nommé plaisir
 
-
-<small>19 octobre 2012 — [Paris Web](http://paris-web.fr/2012/)</small>
+<small>6 mars 2014 — [ChtiJS](http://www.meetup.com/FranceJS/events/168885592/)</small>
