@@ -322,14 +322,14 @@
 					previousParentElement = childElement ;
 				}
 				if ( typeof childElement.setAttribute == 'function' || childElement.nodeType == Node.COMMENT_NODE ) {
-					addAttributes( parentSection, childElement, previousParentElement, separatorElementAttributes, separatorSectionAttributes );
+          addAttributes( parentSection, childElement, previousParentElement, separatorElementAttributes, separatorSectionAttributes );
 				}
 			}
 		}
 
 		if ( element.nodeType == Node.COMMENT_NODE ) {
 			if ( addAttributeInElement( element, previousElement, separatorElementAttributes ) == false ) {
-				addAttributeInElement( element, section, separatorSectionAttributes );
+        addAttributeInElement( element, section, separatorSectionAttributes );
 			}
 		}
 	}
@@ -353,8 +353,9 @@
 
 				var notes = section.querySelector( 'aside.notes' );
 				var markdown = getMarkdownFromSlide( section );
+        var html = marked( markdown );
 
-				section.innerHTML = marked( markdown );
+        section.innerHTML = html;
 				addAttributes( 	section, section, null, section.getAttribute( 'data-element-attributes' ) ||
 								section.parentNode.getAttribute( 'data-element-attributes' ) ||
 								DEFAULT_ELEMENT_ATTRIBUTES_SEPARATOR,
@@ -362,7 +363,9 @@
 								section.parentNode.getAttribute( 'data-attributes' ) ||
 								DEFAULT_SLIDE_ATTRIBUTES_SEPARATOR);
 
-				// If there were notes, we need to re-add them after
+        
+
+        // If there were notes, we need to re-add them after
 				// having overwritten the section's HTML
 				if( notes ) {
 					section.appendChild( notes );
