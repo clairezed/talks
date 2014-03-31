@@ -61,3 +61,15 @@ Time to break your code.
 <!-- .slide: data-background="images/pr-other.png" -->
 
 ## Eventually *someone else* will do it
+
+@@@
+
+## [mdlint](https://github.com/ChrisWren/mdlint)
+
+Validates code in Markdown files.
+
+@@@
+
+<!-- .slide: data-background="images/readme-tree.jpg" -->
+
+## [README Tree](https://github.com/DTrejo/readmetree)
