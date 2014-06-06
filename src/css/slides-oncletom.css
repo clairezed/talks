@@ -1,0 +1,109 @@
+body {
+  transition: all .5s ease;
+}
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+a {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.reveal {
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: -0.02em;
+  text-shadow: 1px 1px 1px rgba(51, 51, 51, 0.3);
+}
+.reveal sup {
+  top: 0;
+}
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: "adelle-1", "adelle-2", Georgia, 'Hiragino Sans GB', STXihei, 'Microsoft YaHei', 'Helvetica Neue', Helvetica, serif;
+  line-height: 0.9em;
+  letter-spacing: 0.02em;
+  margin-bottom: .75em;
+  text-shadow: 1px 1px 2px rgba(51, 51, 51, 0.25);
+}
+.reveal blockquote {
+  background: transparent;
+  box-shadow: none;
+  font-size: 1.55em;
+  font-style: normal;
+  margin-bottom: 1em;
+  width: 80%;
+}
+.reveal ul,
+.reveal ol {
+  margin: .5em 0;
+}
+.reveal pre,
+.reveal code {
+  font-family: "Droid Sans Mono", "Andale Mono", "Courrier New", monospace;
+}
+.reveal pre {
+  font-size: .9em;
+  width: auto;
+}
+.reveal pre code[class] {
+  max-height: 80vh;
+}
+.reveal em,
+.reveal i {
+  color: #ff931c;
+  font-style: normal;
+}
+.reveal section[data-background]:not(.empty):not(.stack),
+.reveal [data-background] section:not(:empty) {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 1em;
+}
+.reveal section h2:last-child,
+.reveal section h3:last-child,
+.reveal section h2.last-child,
+.reveal section h3.last-child {
+  margin-bottom: 0;
+}
+.contrasted body,
+.attention body {
+  background-color: #7f490e;
+  color: #fff;
+}
+.contrasted em,
+.attention em,
+.contrasted i,
+.attention i,
+.contrasted a,
+.attention a {
+  color: yellow;
+}
+.attention body {
+  background-color: #000;
+}
+.code body {
+  background-color: #23241f;
+  color: #fff;
+}
+.code .reveal pre {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+.code .reveal pre .attribute,
+.code .reveal pre .symbol,
+.code .reveal pre .symbol .string,
+.code .reveal pre .tag .title,
+.code .reveal pre .value,
+.code .reveal pre .css .tag {
+  color: #fb70a2;
+}

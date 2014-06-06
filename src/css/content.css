@@ -350,7 +350,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
+  font-family: "adelle-1", "adelle-2", Georgia, 'Hiragino Sans GB', STXihei, 'Microsoft YaHei', 'Helvetica Neue', Helvetica, serif;
   font-weight: 300;
   line-height: 1.1;
   color: inherit;
@@ -3294,6 +3294,10 @@ input[type="button"].btn-block {
 }
 .affix {
   position: fixed;
+}
+::selection {
+  color: white;
+  background: #ff931c;
 }
 h1,
 h2,
