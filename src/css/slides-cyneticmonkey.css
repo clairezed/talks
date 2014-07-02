@@ -1799,15 +1799,15 @@ select[multiple].input-sm {
   height: auto;
 }
 .input-lg {
-  height: 48px;
+  height: 49px;
   padding: 10px 16px;
   font-size: 20px;
   line-height: 1.33;
   border-radius: 6px;
 }
 select.input-lg {
-  height: 48px;
-  line-height: 48px;
+  height: 49px;
+  line-height: 49px;
 }
 textarea.input-lg,
 select[multiple].input-lg {
@@ -2855,11 +2855,11 @@ input[type="button"].btn-block {
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {
-  color: #ccd121;
+  color: #f5f5f5;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #ccd121;
+  color: #dcdcdc;
   background-color: transparent;
 }
 .navbar-default .navbar-text {
@@ -2877,7 +2877,7 @@ input[type="button"].btn-block {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #555555;
-  background-color: transparent;
+  background-color: #e7e7e7;
 }
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
@@ -2902,7 +2902,7 @@ input[type="button"].btn-block {
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  background-color: transparent;
+  background-color: #e7e7e7;
   color: #555555;
 }
 @media (max-width: 767px) {
@@ -2918,7 +2918,7 @@ input[type="button"].btn-block {
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #555555;
-    background-color: transparent;
+    background-color: #e7e7e7;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
