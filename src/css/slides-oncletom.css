@@ -13,11 +13,22 @@ body {
 a {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
+h1 .bbc,
+h2 .bbc,
+h3 .bbc {
+  font-family: Helvetica;
+  font-size: 1.9em;
+  font-weight: 500;
+  text-shadow: none;
+}
 .reveal {
   font-size: 36px;
   font-weight: 200;
   letter-spacing: -0.02em;
-  text-shadow: 1px 1px 1px rgba(51, 51, 51, 0.3);
+}
+.reveal,
+.reveal a {
+  text-shadow: none;
 }
 .reveal sup {
   top: 0;
@@ -32,7 +43,7 @@ a {
   line-height: 0.9em;
   letter-spacing: 0.02em;
   margin-bottom: .75em;
-  text-shadow: 1px 1px 2px rgba(51, 51, 51, 0.25);
+  text-shadow: 1px 1px rgba(51, 51, 51, 0.25);
 }
 .reveal blockquote {
   background: transparent;
@@ -63,16 +74,31 @@ a {
   font-style: normal;
 }
 .reveal section[data-background]:not(.empty):not(.stack),
-.reveal [data-background] section:not(:empty) {
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
+.reveal [data-background] section:not(:empty) h2 {
+  background-color: rgba(255, 255, 255, 0.85);
   padding: 1em;
 }
+.reveal section h1:last-child,
 .reveal section h2:last-child,
 .reveal section h3:last-child,
 .reveal section h2.last-child,
 .reveal section h3.last-child {
   margin-bottom: 0;
+}
+.reveal .controls div.navigate-down {
+  border-top-color: #ff931c;
+}
+.reveal .controls div.navigate-up {
+  border-bottom-color: #ff931c;
+}
+.reveal .controls div.navigate-right {
+  border-left-color: #ff931c;
+}
+.reveal .controls div.navigate-left {
+  border-right-color: #ff931c;
+}
+.reveal .progress span {
+  background: rgba(255, 147, 28, 0.7);
 }
 .contrasted body,
 .attention body {

@@ -42,9 +42,21 @@
       </div>
     </div>
   </nav>
-
-  <div class="post-cover" style="background-image: url(https://farm4.staticflickr.com/3751/11915201475_8f7fd3d7af_c_d.jpg)"></div>
 </header>
+
+<div class="post-cover">
+  <div class="post-cover__hero post_cover__hero--image" style="background-image: url(https://farm4.staticflickr.com/3751/11915201475_8f7fd3d7af_c_d.jpg)"></div>
+
+  <div class="post-cover__body">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2>Public talks about <em>Web technologies</em> and <em>human experience</em>.</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="container">
   <main role="main">
@@ -55,6 +67,33 @@
       </div>
 
       <div class="content row">
+        
+        <div class="col-md-12">
+          <article>
+            <h2><a href="2014/devcon/">Seeding and farming Open Source code at the BBC</a></h2>
+
+            <ul class="metadata">
+              <li>
+                <a href="https://tech.ebu.ch/devcon14">
+                  <span class="icon-location-2"></span>EBU DevCon
+                </a>
+              </li>
+              
+
+            </ul>
+
+            <div class="row">
+              <div class="col-md-8 content">
+                  <p> I never considered myself being an Open Source developer.
+But I have always learned and benefited from the Open Source nebula. So I naturally shared back, through blog posts, talks or  code.</p>
+<p>Although Open Source seems nice in theory, promoting this philosophy in an organisation can be tricky: success leads to business, openness leads to protection and exposure leads to a fear of failure.</p>
+<p>So how do we do Open Source, especially in a large organisation like the BBC? How can we plant the seeds of an organic and natural change without hurting the business nor damaging ours revenues?</p>
+<p>We will see through examples how projects like <a href="https://github.com/BBC-News/Imager.js">Imager.js</a>, <a href="http://waveform.prototyping.bbc.co.uk">Peaks.js</a> and <a href="https://fmtvp.github.io/tal">TAL</a> benefited from an Open Source collaboration between teams and external contributors. For the best. </p>
+
+              </div>
+            </div>
+          </article>
+        </div>
         
         <div class="col-md-12">
           <article>
@@ -72,7 +111,7 @@
 
             <div class="row">
               <div class="col-md-8 content">
-                  <p>The README has become the new documentation entrypoint.</p>
+                  <p> The README has become the new documentation entrypoint.</p>
 <p>From nothing to something, the README will improve the quality of your project.
 And more than that, you can even design your project and shape its future by
 following the same pattern. </p>
@@ -98,7 +137,7 @@ following the same pattern. </p>
 
             <div class="row">
               <div class="col-md-8 content">
-                  <p>We use Grunt plugins and the &#x60;Gruntfile.js&#x60; to achieve common and repetitive tasks.</p>
+                  <p> We use Grunt plugins and the &#x60;Gruntfile.js&#x60; to achieve common and repetitive tasks.</p>
 <p>Sometimes, we have to bake our own business logic so we write code. And it works.
 How do we test it? By running the code. How do we reuse the code? We don&#x27;t it&#x27;s a Grunt task.</p>
 <p>I&#x27;ll explain the story of the BBC News refactoring of Grunt tasks, how it has been simplified and fully tested.
@@ -125,7 +164,7 @@ Thanks to that, you will be able to write not only code but <strong>testable fea
 
             <div class="row">
               <div class="col-md-8 content">
-                  <p>TGIF! The best aknowledged day to deploy production-ready software. But just when you were about to leave the office,
+                  <p> TGIF! The best aknowledged day to deploy production-ready software. But just when you were about to leave the office,
 you discover a bug and want to fix it.</p>
 <p>If only the developers had written a &#x60;README.md&#x60; instead of a 30 pages specification document! </p>
 
@@ -150,7 +189,7 @@ you discover a bug and want to fix it.</p>
 
             <div class="row">
               <div class="col-md-8 content">
-                  <p>C&#x27;est vendredi, jour béni de mise en production : le sysadmin est déjà à l&#x27;apéro
+                  <p> C&#x27;est vendredi, jour béni de mise en production : le sysadmin est déjà à l&#x27;apéro
 pendant que vous terminez un diagramme de Gantt. Hélas patatras : le site plante.</p>
 <p>Si seulement il vous avait laissé un &#x60;README.md&#x60; ce gentil Amédé ! </p>
 
@@ -189,9 +228,9 @@ pendant que vous terminez un diagramme de Gantt. Hélas patatras : le site plant
 
             <div class="row">
               <div class="col-md-8 content">
-                  <p><strong>Grunt</strong> est un outil populaire chez les développeurs <em>Node.js</em> et <em>frontend</em>.</p>
+                  <p> <strong>Grunt</strong> est un outil populaire chez les développeurs <em>Node.js</em> et <em>frontend</em>.</p>
 <p>Je partage quelques pistes et techniques pour créer vos propres <strong>tâches Grunt testées et maintenables</strong>.</p>
-<p>J’en profite aussi pour évoquer cette pratique au travers d’un retour d’expérience lors d’un sprint de deux semaines dans l’équipe de <a href="http://m.bbc.co.uk/news">BBC News</a>.</p>
+<p>J’en profite aussi pour évoquer cette pratique au travers d’un retour d’expérience lors d’un sprint de deux semaines dans l’équipe de <a href="http://m.bbc.co.uk/news">BBC News</a>. </p>
 
               </div>
             </div>
@@ -214,7 +253,7 @@ pendant que vous terminez un diagramme de Gantt. Hélas patatras : le site plant
 
             <div class="row">
               <div class="col-md-8 content">
-                  <p>The Promise JavaScript pattern is receiving quite a lot of attention recently as popular asynchronous pattern.</p>
+                  <p> The Promise JavaScript pattern is receiving quite a lot of attention recently as popular asynchronous pattern.</p>
 <p>This talk presents the way to understand the concept, how to learn using them step by step and how to design your software based on a real world example. </p>
 
               </div>
@@ -242,7 +281,7 @@ pendant que vous terminez un diagramme de Gantt. Hélas patatras : le site plant
 
             <div class="row">
               <div class="col-md-8 content">
-                  <p>Remember your complex Excel VBScripts or your first handmade Access+Word mailer system nightmares?</p>
+                  <p> Remember your complex Excel VBScripts or your first handmade Access+Word mailer system nightmares?</p>
 <p>Google Apps Scripts is a hidden replacing gem without having to buy a SAP licence.</p>
 <p>JavaScript is the definitive language to build scripts, deploy simple &amp; complex workflows using your company’s Google Apps services and datas: retrieve from third party providers (like Twitter), host in Spreadsheets, publish to Calendar, notify with emails and more. </p>
 
@@ -281,7 +320,7 @@ pendant que vous terminez un diagramme de Gantt. Hélas patatras : le site plant
 
             <div class="row">
               <div class="col-md-8 content">
-                  <p>Vendredi, mise en production. Vous annoncez à vos proches que pour l&#x27;apéro ce soir, c&#x27;est mort, vous êtes dé-bor-dé(e).</p>
+                  <p> Vendredi, mise en production. Vous annoncez à vos proches que pour l&#x27;apéro ce soir, c&#x27;est mort, vous êtes dé-bor-dé(e).</p>
 <p>Un mauvais clic plus tard, le site est mort. Ambiance fin du monde pendant que vos amis s&#x27;amusent.</p>
 <p>Si vous aviez su que la rédaction du README de votre projet vous aurait permis non seulement de préserver votre apéro sacré, mais en plus de livrer le cœur léger, vous l&#x27;auriez sûrement écrit plus tôt.</p>
 <p>Avant que le monde ne s&#x27;effondre sur lui-même, nous ferons encore mieux : 15 minutes c&#x27;est juste ce qu&#x27;il faut pour créer un code robuste. </p>
@@ -321,7 +360,7 @@ pendant que vous terminez un diagramme de Gantt. Hélas patatras : le site plant
 
             <div class="row">
               <div class="col-md-8 content">
-                  <p>Le développement Web frontend – multiplicité de compétences – est l&#x27;apanage des experts … ou des stagiaires. Développer, c&#x27;est Java, C# ou PHP.</p>
+                  <p> Le développement Web frontend – multiplicité de compétences – est l&#x27;apanage des experts … ou des stagiaires. Développer, c&#x27;est Java, C# ou PHP.</p>
 <p>L&#x27;omniprésence des interfaces recourant à HTML induit un recours à des points de repère, tant pour les développeurs, les chefs de projet que les acheteurs. C&#x27;est une des idées qui en est ressortie de l&#x27;atelier <a href="http://www.paris-web.fr/2010/programme/industrialiser-lartisanat-de-lintegration-html.php">Industrialiser l&#x27;artisanat du développement HTML</a> à Paris Web 2010.</p>
 <p>Depuis, l&#x27;eau a coulé sous les ponts et une liste de bonnes pratiques de développement frontend est en cours de réalisation. Nous verrons comment et pourquoi l&#x27;alimenter, entre autre pour des besoins d&#x27;industrialisation des projets.</p>
 <p>L&#x27;industrialisation, c&#x27;est aussi un mot qui inquiète, surtout lorsque cela concerne un des pans du développement Web proche du modèle de l&#x27;artisanat. Est-ce le retour du travail à la chaîne ? Est-ce une spécialisation ou une déresponsabilisation ? Ou pire, est-ce un moyen d&#x27;apporter une réponse unique à des besoins multiples ? </p>
@@ -357,7 +396,7 @@ pendant que vous terminez un diagramme de Gantt. Hélas patatras : le site plant
 
             <div class="row">
               <div class="col-md-8 content">
-                  <p>Pourquoi tenter d&#x27;industrialiser l&#x27;intégration Web ? Est-ce si artisanal que ça ?</p>
+                  <p> Pourquoi tenter d&#x27;industrialiser l&#x27;intégration Web ? Est-ce si artisanal que ça ?</p>
 <p>Les résultats de l&#x27;expérience en octobre 2010 à Paris-Web ont été assez éloquents : les développeurs travaillent pour eux, produisent et documentent/testent peu.</p>
 <p>Cet atelier initie le projet de création d&#x27;un livre blanc de l&#x27;intégration Web, avec comme objectif de pouvoir en présenter les résultats lors de Paris-Web 2011 :-) </p>
 
@@ -382,7 +421,7 @@ pendant que vous terminez un diagramme de Gantt. Hélas patatras : le site plant
 
             <div class="row">
               <div class="col-md-8 content">
-                  <p>Symfony does a lot of things, so as your admin-generator.</p>
+                  <p> Symfony does a lot of things, so as your admin-generator.</p>
 <p>However, we still need to be connected to our app to use them. Gears, and now HTML 5, makes our web pages offline capable, so why not our admin-generators?</p>
 <p>We&#x27;ll see how to contribute to your app from a submarine or a cave and how to improve online performances with local caching. </p>
 
@@ -417,7 +456,7 @@ pendant que vous terminez un diagramme de Gantt. Hélas patatras : le site plant
 
             <div class="row">
               <div class="col-md-8 content">
-                  <p><a href="http://tools.google.com/gears/">Gears</a> est un outil Open Source, majoritairement connu pour permettre à une page Web d’être consultable en étant déconnecté du réseau. Ce plugin pour navigateur Web propose pourtant d’autres briques utiles dans d’autres contextes, notamment les performances et le traitement d’un nombre important de données. C’est un outil unique permettant de créer des applications fonctionnelles hors-ligne et cross-brower sans avoir à recours à du client lourd (type application iPhone).</p>
+                  <p> <a href="http://tools.google.com/gears/">Gears</a> est un outil Open Source, majoritairement connu pour permettre à une page Web d’être consultable en étant déconnecté du réseau. Ce plugin pour navigateur Web propose pourtant d’autres briques utiles dans d’autres contextes, notamment les performances et le traitement d’un nombre important de données. C’est un outil unique permettant de créer des applications fonctionnelles hors-ligne et cross-brower sans avoir à recours à du client lourd (type application iPhone).</p>
 <p>La présentation se focalisera sur la présentation des composants, des exemples d’utilisation mais aussi sur les contraintes et les choix de stratégie à adopter dans son code pour éviter la création d’usines à gaz.</p>
 <p>L’atelier concluera sur l’avenir et HTML 5 dans la mesure où les travaux de Gears sont désormais intégrés à la spécification HTML 5. </p>
 
@@ -452,7 +491,7 @@ pendant que vous terminez un diagramme de Gantt. Hélas patatras : le site plant
 
             <div class="row">
               <div class="col-md-8 content">
-                  <p>Méconnus ou dénigrés, les frameworks ou briques de développement CSS ont pourtant atteint un certain seuil de maturité.</p>
+                  <p> Méconnus ou dénigrés, les frameworks ou briques de développement CSS ont pourtant atteint un certain seuil de maturité.</p>
 <p>Elles permettent entre autre de gommer les différences entre les navigateurs, d’apporter des facilités de mise en forme, d’adapter la typographie utilisateur et surtout, de gagner du temps en harmonisant vos habitudes de développement d’un projet à un autre.</p>
 <p>Vous en saurez davantage sur les attentes vis-à-vis d’un frameworks, les raisons de les adopter... ou de les écarter dans des projets, personnels et professionnels. </p>
 

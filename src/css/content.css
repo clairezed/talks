@@ -3328,7 +3328,6 @@ h4 {
   padding: 1.04880885em 0;
 }
 .header {
-  background: #fafafa;
   color: #fff;
 }
 .header h1,
@@ -3343,20 +3342,16 @@ h4 {
   border-radius: 2px;
   margin-right: .25em;
   max-height: 100%;
+  vertical-align: top;
 }
 .header .navbar {
-  -webkit-transform: translate(0, -51px);
-  -ms-transform: translate(0, -51px);
-  transform: translate(0, -51px);
-  -webkit-transition: -webkit-transform ease 0.5s;
-  -moz-transition: -moz-transform ease 0.5s;
-  -o-transition: -o-transform ease 0.5s;
-  transition: transform ease 0.5s;
+  background-color: rgba(127, 73, 14, 0.2);
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
 }
-.header .navbar.visible {
-  -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  transform: translate(0, 0);
+.header .navbar.visible,
+.header .navbar:hover {
+  background-color: #7f490e;
 }
 .header .navbar-brand small {
   color: #fafafa;
@@ -3379,7 +3374,6 @@ h4 {
   }
 }
 .footer {
-  background: #fafafa;
   color: #fff;
   background: #7f490e;
   margin: 1.41421356em 0 0;
@@ -3397,20 +3391,16 @@ h4 {
   border-radius: 2px;
   margin-right: .25em;
   max-height: 100%;
+  vertical-align: top;
 }
 .footer .navbar {
-  -webkit-transform: translate(0, -51px);
-  -ms-transform: translate(0, -51px);
-  transform: translate(0, -51px);
-  -webkit-transition: -webkit-transform ease 0.5s;
-  -moz-transition: -moz-transform ease 0.5s;
-  -o-transition: -o-transform ease 0.5s;
-  transition: transform ease 0.5s;
+  background-color: rgba(127, 73, 14, 0.2);
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
 }
-.footer .navbar.visible {
-  -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  transform: translate(0, 0);
+.footer .navbar.visible,
+.footer .navbar:hover {
+  background-color: #7f490e;
 }
 .footer .navbar-brand small {
   color: #fafafa;
@@ -3468,19 +3458,75 @@ ul.metadata a {
   color: #999999;
 }
 .post-cover {
+  height: 100vh;
+  margin-bottom: 1.5em;
+  position: relative;
+  /* fix for iPad */
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .post-cover {
+    height: 768px;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .post-cover {
+    height: 1024px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
+  .post-cover {
+    height: 320px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) {
+  .post-cover {
+    height: 480px;
+  }
+}
+.post-cover .post-cover__hero {
   background-position: center center;
   background-size: cover;
-  height: 20em;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
 }
-.post-cover:after {
+.post-cover .post-cover__hero:after {
+  background-color: #000;
   content: " ";
   display: block;
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0) 33%);
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0) 33%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4d000000', endColorstr='#00000000', GradientType=0);
+  opacity: 0.3;
   height: 100%;
   width: 100%;
+}
+.post-cover .post-cover__body {
+  bottom: 0;
+  color: #f0f0f0;
+  position: absolute;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  width: 100%;
+  z-index: 10;
+}
+.post-cover .post-cover__body em,
+.post-cover .post-cover__body strong {
+  background-color: rgba(255, 147, 28, 0.7);
+  font-style: normal;
+  padding-left: .25em;
+  padding-right: .25em;
+}
+.post-cover .post-cover__body h1,
+.post-cover .post-cover__body h2 {
+  line-height: 1.35;
+  padding-top: 0;
+}
+.post-cover .post-cover__body a {
+  color: #f0f0f0;
+  text-decoration: underline;
+}
+.post-cover .post-cover__body a:hover,
+.post-cover .post-cover__body a:focus {
+  background-color: rgba(255, 147, 28, 0.7);
+  text-decoration: none;
 }
 .post .post-header small {
   display: block;
