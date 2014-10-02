@@ -3461,27 +3461,6 @@ ul.metadata a {
   height: 100vh;
   margin-bottom: 1.5em;
   position: relative;
-  /* fix for iPad */
-}
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  .post-cover {
-    height: 768px;
-  }
-}
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  .post-cover {
-    height: 1024px;
-  }
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
-  .post-cover {
-    height: 320px;
-  }
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) {
-  .post-cover {
-    height: 480px;
-  }
 }
 .post-cover .post-cover__hero {
   background-position: center center;
