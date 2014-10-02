@@ -65,7 +65,7 @@
   padding: 0 0.3em;
   text-shadow: none;
 }
-.reveal section .empty,
+.reveal .empty,
 [hidden] {
   display: none !important;
 }
