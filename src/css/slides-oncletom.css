@@ -120,6 +120,10 @@ h3 .bbc {
   background-color: #23241f;
   color: #fff;
 }
+.code .reveal code {
+  background: transparent;
+  color: #bfbfbf;
+}
 .code .reveal pre {
   border: none;
   border-radius: 0;

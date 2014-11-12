@@ -3628,3 +3628,6 @@ ul.metadata a {
 .post .interactive-loading.loaded::after {
   content: "";
 }
+.metadata {
+  color: #999999;
+}
