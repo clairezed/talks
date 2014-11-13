@@ -3631,3 +3631,7 @@ ul.metadata a {
 .metadata {
   color: #999999;
 }
+.reveal img {
+  max-height: 95vh;
+  max-width: 95vw;
+}
