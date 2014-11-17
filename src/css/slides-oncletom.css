@@ -81,6 +81,7 @@ h3 .bbc {
 .reveal section h1:last-child,
 .reveal section h2:last-child,
 .reveal section h3:last-child,
+.reveal section h1.last-child,
 .reveal section h2.last-child,
 .reveal section h3.last-child {
   margin-bottom: 0;
