@@ -265,7 +265,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "adelle-1", "adelle-2", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 20px;
   line-height: 1.75;
   color: #333333;
@@ -350,7 +350,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "adelle-1", "adelle-2", Georgia, 'Hiragino Sans GB', STXihei, 'Microsoft YaHei', 'Helvetica Neue', Helvetica, serif;
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
   font-weight: 300;
   line-height: 1.1;
   color: inherit;
@@ -431,27 +431,27 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 84px;
+  font-size: 64px;
 }
 h2,
 .h2 {
-  font-size: 68px;
+  font-size: 52px;
 }
 h3,
 .h3 {
-  font-size: 53px;
+  font-size: 40px;
 }
 h4,
 .h4 {
-  font-size: 43px;
+  font-size: 33px;
 }
 h5,
 .h5 {
-  font-size: 20px;
+  font-size: 25px;
 }
 h6,
 .h6 {
-  font-size: 17px;
+  font-size: 20px;
 }
 p {
   margin: 0 0 17.5px;
@@ -3327,6 +3327,9 @@ h4 {
   margin: 0;
   padding: 1.04880885em 0;
 }
+#most-recent {
+  background-color: #eeeeee;
+}
 .header {
   color: #fff;
 }
@@ -3346,6 +3349,8 @@ h4 {
 }
 .header .navbar {
   background-color: rgba(127, 73, 14, 0.2);
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-weight: 300;
   -webkit-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
 }
@@ -3395,6 +3400,8 @@ h4 {
 }
 .footer .navbar {
   background-color: rgba(127, 73, 14, 0.2);
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-weight: 300;
   -webkit-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
 }
@@ -3441,7 +3448,7 @@ ul.metadata {
   padding-left: 0;
   list-style: none;
   margin-left: -5px;
-  font-size: 40.8px;
+  font-size: 31.2px;
 }
 ul.metadata > li {
   display: inline-block;
@@ -3502,6 +3509,8 @@ ul.metadata a {
 .post-cover .post-cover__body {
   bottom: 0;
   color: #f0f0f0;
+  font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+  font-weight: 300;
   position: absolute;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
   width: 100%;
@@ -3520,16 +3529,21 @@ ul.metadata a {
   padding-top: 0;
 }
 .post-cover .post-cover__body a {
+  border-bottom: 1px solid #f0f0f0;
   color: #f0f0f0;
-  text-decoration: underline;
 }
 .post-cover .post-cover__body a:hover,
 .post-cover .post-cover__body a:focus {
   background-color: rgba(255, 147, 28, 0.7);
   text-decoration: none;
 }
+.post .post-header a:hover,
+.post .post-header a:focus {
+  text-decoration: none;
+}
 .post .post-header small {
   display: block;
+  font-weight: inherit;
 }
 .post .post-footer {
   background: #7f490e;
@@ -3548,6 +3562,13 @@ ul.metadata a {
 .post .nav.nav-next {
   text-align: right;
 }
+.post .content a {
+  text-decoration: underline;
+}
+.post .content a:hover,
+.post .content a:focus {
+  text-decoration: none;
+}
 .post .content img[src^='/images'],
 .post .content .interactive-loading.loading img,
 .post .content .interactive-loading.loaded img,
@@ -3565,6 +3586,10 @@ ul.metadata a {
 .post .content figure.highlight {
   margin-left: 0;
   margin-right: 0;
+}
+.post .content figure.highlight figcaption {
+  color: #555555;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 .post .content figure.highlight .gutter {
   text-align: right;
