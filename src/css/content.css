@@ -3569,14 +3569,26 @@ ul.metadata a {
 .post .content a:focus {
   text-decoration: none;
 }
+.post .content .video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.post .content .video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 .post .content img[src^='/images'],
 .post .content .interactive-loading.loading img,
 .post .content .interactive-loading.loaded img,
 .post .content img[src*='static.flickr.com'],
 .post .content img[src*='staticflickr.com'] {
-  -webkit-box-shadow: 0 0 5px #555555;
-  box-shadow: 0 0 5px #555555;
-  border-radius: 3px;
+  border: 20px solid #eee;
   margin-left: auto;
   margin-right: auto;
   display: block;
