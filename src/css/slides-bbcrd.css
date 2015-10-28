@@ -13,6 +13,15 @@ body {
   font-family: Gill Sans, sans-serif;
   font-weight: 300;
   line-height: 1.25;
+  margin-bottom: .5em;
+}
+.reveal:last-child,
+.reveal h1:last-child,
+.reveal h2:last-child,
+.reveal h3:last-child,
+.reveal h4:last-child,
+.reveal h5:last-child {
+  margin-bottom: 0;
 }
 .reveal a {
   color: #006fc9;
@@ -59,9 +68,6 @@ body {
 .reveal blockquote:before,
 .reveal blockquote:after {
   content: none;
-}
-.reveal small {
-  font-size: 1em;
 }
 .reveal section {
   display: flex;
