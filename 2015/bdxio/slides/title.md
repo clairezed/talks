@@ -1,8 +1,4 @@
-<!-- .slide: data-background="images/channel-islands/DSC_6648.jpg" -->
-
-@@@
-
-<!-- .slide: data-background="images/channel-islands/DSC_6648.jpg" -->
+<!-- .slide: data-state="contrasted2" -->
 
 # Monolithe
 

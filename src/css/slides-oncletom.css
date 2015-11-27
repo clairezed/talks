@@ -62,11 +62,11 @@ h3 .bbc {
   max-height: 80vh;
 }
 .reveal a {
-  border-bottom: 1px solid #ff931c;
+  border-bottom: 1px solid #FF931C;
   text-decoration: none;
 }
 .reveal em {
-  color: #ff931c;
+  color: #FF931C;
   font-style: normal;
 }
 .reveal strong {
@@ -77,7 +77,7 @@ h3 .bbc {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 .reveal strong:before {
-  background: #ff931c;
+  background: #FF931C;
   content: "";
   height: 100%;
   left: 0;
@@ -96,16 +96,16 @@ h3 .bbc {
   margin-bottom: 0;
 }
 .reveal .controls div.navigate-down {
-  border-top-color: #ff931c;
+  border-top-color: #FF931C;
 }
 .reveal .controls div.navigate-up {
-  border-bottom-color: #ff931c;
+  border-bottom-color: #FF931C;
 }
 .reveal .controls div.navigate-right {
-  border-left-color: #ff931c;
+  border-left-color: #FF931C;
 }
 .reveal .controls div.navigate-left {
-  border-right-color: #ff931c;
+  border-right-color: #FF931C;
 }
 .reveal .progress span {
   background: rgba(255, 147, 28, 0.7);
@@ -126,7 +126,7 @@ h3 .bbc {
 }
 .contrasted body,
 .attention body {
-  background-color: #7f490e;
+  background-color: #7F490E;
   color: #fff;
 }
 .contrasted em,
