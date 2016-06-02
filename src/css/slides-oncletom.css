@@ -44,7 +44,25 @@ h3 .bbc {
   font-size: 1.55em;
   font-style: normal;
   margin-bottom: 1em;
+  text-align: left;
   width: 80%;
+}
+.reveal blockquote p {
+  border-left: 7px solid #999999;
+  padding-left: 1em;
+}
+.reveal table {
+  border-collapse: collapse;
+}
+.reveal table thead th {
+  border-bottom: 1px double #555555;
+  font-weight: normal;
+  padding: .7em .5em;
+}
+.reveal table tbody td,
+.reveal table tbody th {
+  border-bottom: 1px solid #555555;
+  padding: .5em;
 }
 .reveal ul,
 .reveal ol {
@@ -62,11 +80,11 @@ h3 .bbc {
   max-height: 80vh;
 }
 .reveal a {
-  border-bottom: 1px solid #FF931C;
+  border-bottom: 1px solid #ff931c;
   text-decoration: none;
 }
 .reveal em {
-  color: #FF931C;
+  color: #ff931c;
   font-style: normal;
 }
 .reveal strong {
@@ -77,7 +95,7 @@ h3 .bbc {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 .reveal strong:before {
-  background: #FF931C;
+  background: #ff931c;
   content: "";
   height: 100%;
   left: 0;
@@ -96,16 +114,16 @@ h3 .bbc {
   margin-bottom: 0;
 }
 .reveal .controls div.navigate-down {
-  border-top-color: #FF931C;
+  border-top-color: #ff931c;
 }
 .reveal .controls div.navigate-up {
-  border-bottom-color: #FF931C;
+  border-bottom-color: #ff931c;
 }
 .reveal .controls div.navigate-right {
-  border-left-color: #FF931C;
+  border-left-color: #ff931c;
 }
 .reveal .controls div.navigate-left {
-  border-right-color: #FF931C;
+  border-right-color: #ff931c;
 }
 .reveal .progress span {
   background: rgba(255, 147, 28, 0.7);
@@ -126,7 +144,7 @@ h3 .bbc {
 }
 .contrasted body,
 .attention body {
-  background-color: #7F490E;
+  background-color: #7f490e;
   color: #fff;
 }
 .contrasted em,
