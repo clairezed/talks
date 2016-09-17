@@ -3426,7 +3426,8 @@ h4 {
   content: "\e80a";
 }
 .footer a[href*='flickr.com']:before,
-.footer a[href$='/photos/']:before {
+.footer a[href$='/photos/']:before,
+.footer a[href$='/photography/']:before {
   content: "\e809";
 }
 .footer a[href*='github.com']:before {
