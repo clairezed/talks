@@ -18,6 +18,11 @@ h3 .bbc {
   font-weight: 500;
   text-shadow: none;
 }
+footer {
+  bottom: -25%;
+  position: absolute;
+  width: 100%;
+}
 .reveal {
   font-size: 36px;
 }
@@ -88,22 +93,12 @@ h3 .bbc {
   font-style: normal;
 }
 .reveal strong {
+  background: rgba(255, 147, 28, 0.9);
   color: #fff;
   font-weight: inherit;
-  padding: .05em .3em;
-  position: relative;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-}
-.reveal strong:before {
-  background: #FF931C;
-  content: "";
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  transform: skewX(-15deg);
-  width: 100%;
-  z-index: -1;
+  padding-left: .3em;
+  padding-right: .3em;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 .reveal section h1:last-child,
 .reveal section h2:last-child,
@@ -134,6 +129,12 @@ h3 .bbc {
 .background-light .reveal .slides .present {
   color: #fff;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+}
+.background-dark strong,
+.background-contrasted strong {
+  background: rgba(255, 147, 28, 0.7);
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 .background-dark .state-background {
   background-color: rgba(0, 0, 0, 0.1);
