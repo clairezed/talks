@@ -1,0 +1,52 @@
+<h2 id="Tale-Of-A-UK-Job-Application"><a href="#Tale-Of-A-UK-Job-Application" class="headerlink" title="Tale Of A UK Job Application"></a>Tale Of A UK Job Application</h2><h3 id="And-Pardon-my-French"><a href="#And-Pardon-my-French" class="headerlink" title="And Pardon my French"></a><em>And Pardon my French</em></h3><ol>
+<li>Submitting an application form</li>
+<li>Being shortlisted</li>
+<li>Phone Interview</li>
+<li>Technical Interview</li>
+<li>Physical Interview</li>
+<li>Salary Negociation</li>
+</ol>
+<p>Then, <strong>accept the contract and relocate</strong> or …</p>
+<p>@@@</p>
+<h2 id="Let’s-translate-that-in-JavaScript…"><a href="#Let’s-translate-that-in-JavaScript…" class="headerlink" title="Let’s translate that in JavaScript…"></a>Let’s translate that in JavaScript…</h2><p>@@@</p>
+<pre><code class="javascript">(<span class="function"><span class="keyword">function</span> <span class="title">jobApplication</span>(<span class="params"></span>)</span>{
+  (<span class="function"><span class="keyword">function</span> <span class="title">shortlist</span>(<span class="params">data</span>)</span>{
+    (<span class="function"><span class="keyword">function</span> <span class="title">phoneInterview</span>(<span class="params"></span>)</span>{
+      (<span class="function"><span class="keyword">function</span> <span class="title">technicalInterview</span>(<span class="params">data</span>)</span>{
+        (<span class="function"><span class="keyword">function</span> <span class="title">physicalInterview</span>(<span class="params"></span>)</span>{
+          (<span class="function"><span class="keyword">function</span> <span class="title">salaryNegociation</span>(<span class="params">payload</span>)</span>{
+            <span class="keyword">if</span> (payload.job){
+              acceptContract() &amp;&amp; relocate();
+            }
+            <span class="keyword">else</span> <span class="keyword">throw</span> <span class="built_in">SyntaxError</span>(<span class="string">"Too bad…"</span>);
+          })({ <span class="attr">job</span>: <span class="string">"Software Engineer"</span> });
+        })();
+      })({ <span class="attr">script</span>: <span class="string">"eval('alert(true);')"</span> });
+    })();
+  })({ <span class="attr">why</span>: <span class="string">"I speak JavaScript!"</span> });
+})();
+</code></pre>
+<p>@@@</p>
+<h2 id="Badge-Unlocked-Pyramid-of-Doom"><a href="#Badge-Unlocked-Pyramid-of-Doom" class="headerlink" title="Badge Unlocked: Pyramid of Doom!"></a>Badge Unlocked: <em>Pyramid</em> of Doom!</h2><p><img src="images/doom.jpg" alt=""></p>
+<p>@@@</p>
+<h2 id="Promisification"><a href="#Promisification" class="headerlink" title="Promisification!"></a>Promisification!</h2><p>@@@</p>
+<pre><code class="javascript"><span class="keyword">var</span> $job = $.Deferred();
+
+$jobApplication
+  .progress( updateApplicationState )
+  .done( acceptContract )
+  .done( relocate )
+  .fail( keepCalmAndDrinkWine );
+
+$jobApplication
+  .notify({ <span class="attr">state</span>: <span class="string">"shortlist"</span> })
+  .notify({ <span class="attr">state</span>: <span class="string">"phone_interview"</span> })
+  .notify({ <span class="attr">state</span>: <span class="string">"technical_interview"</span> })
+  .notify({ <span class="attr">state</span>: <span class="string">"physical_interview"</span> })
+  .notify({ <span class="attr">state</span>: <span class="string">"salary_negociation"</span> });
+
+$jobApplication.resolve({
+  job: <span class="string">"Software Engineer"</span>
+});
+</code></pre>
+<p><small><a href="http://jsbin.com/episez/6/edit">See on JSBin</a>.</small></p>

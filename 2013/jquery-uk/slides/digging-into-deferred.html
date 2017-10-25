@@ -1,0 +1,79 @@
+<h2 id="Digging-into-jQuery-Deferred"><a href="#Digging-into-jQuery-Deferred" class="headerlink" title="Digging into jQuery.Deferred"></a>Digging into jQuery.Deferred</h2><p>Learning to use Promises, the soft way.</p>
+<p>@@@</p>
+<h2 id="Consume-the-API"><a href="#Consume-the-API" class="headerlink" title="Consume the API"></a>Consume the API</h2><p>In jQuery 1.8+: <code>$.ajax</code>, <code>$.animate</code>, <code>$(&#39;&lt;selector&gt;&#39;)</code></p>
+<p><br></p>
+<pre><code class="javascript"><span class="keyword">var</span> $deferred = $.post(<span class="string">'/cheese'</span>, {
+  name: <span class="string">"Livarot"</span>
+});
+
+$deferred
+  .done( syncLocalStorage )
+  .done( updateUI )
+  .fail( displayError )
+  .always( logNetworkResponse );
+</code></pre>
+<p>@@@</p>
+<h2 id="Create-your-first-Deferred"><a href="#Create-your-first-Deferred" class="headerlink" title="Create your first Deferred"></a>Create your first Deferred</h2><pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">getDelayedUserInput</span>(<span class="params"></span>)</span>{
+  <span class="keyword">var</span> $deferred = $.Deferred();
+
+  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    $deferred.resolve(prompt(<span class="string">"Anything to say?"</span>));
+  }, <span class="number">1000</span>);
+
+  <span class="keyword">return</span> $deferred;
+}
+
+$(<span class="string">'input'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>{
+  getDelayedUserInput().done(<span class="function"><span class="keyword">function</span>(<span class="params">user_input</span>)</span>{
+    $(e.target).val(user_input);
+  });
+});
+</code></pre>
+<p><small><a href="http://jsbin.com/ocadol/3/edit">See on JSBin</a>.</small></p>
+<p>@@@</p>
+<h2 id="Deal-with-race-condition-workflows"><a href="#Deal-with-race-condition-workflows" class="headerlink" title="Deal with race condition workflows"></a>Deal with race condition workflows</h2><ul>
+<li><code>then()</code> enables data filtering.</li>
+<li><code>when()</code> is a <code>done()</code> for multiple promises.</li>
+</ul>
+<pre><code class="javascript">$.when( $.getJSON(<span class="string">'/page/1'</span>), $.getJSON(<span class="string">'/page/2'</span>) )
+  .then(<span class="function"><span class="keyword">function</span>(<span class="params">page1_data, page2_data</span>)</span>{
+    <span class="keyword">return</span> page1_data.concat(page2_data);
+  })
+  .done( displayCombinedData )
+  .fail( displayError );
+</code></pre>
+<p>@@@</p>
+<h2 id="Sharing-safely-your-Deferred"><a href="#Sharing-safely-your-Deferred" class="headerlink" title="Sharing safely your Deferred"></a>Sharing safely your Deferred</h2><p><code>jQuery.Deferred</code> vs. <code>Deferred.promise()</code>.</p>
+<p><br></p>
+<pre><code class="javascript"><span class="keyword">var</span> $deferred = $.Deferred();
+<span class="keyword">var</span> $promise = $deferred.promise();
+
+$promise.done(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>{
+  <span class="built_in">console</span>.log(<span class="string">"Oh my "</span>+value);
+});
+
+<span class="comment">// $promise is read-only</span>
+$promise.resolve(<span class="string">"gosh"</span>);
+
+<span class="comment">// will log 'Oh my head'</span>
+$deferred.resolve(<span class="string">"head"</span>);
+</code></pre>
+<p><small><a href="http://jsbin.com/uzokam/1/edit">See on JSBin</a>.</small></p>
+<p>@@@</p>
+<h2 id="Improving-our-first-Deferred"><a href="#Improving-our-first-Deferred" class="headerlink" title="Improving our first Deferred"></a>Improving our first Deferred</h2><pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">getDelayedUserInput</span>(<span class="params"></span>)</span>{
+  <span class="keyword">var</span> $deferred = $.Deferred();
+
+  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    $deferred.resolve(prompt(<span class="string">"Anything to say?"</span>));
+  }, <span class="number">1000</span>);
+
+  <span class="keyword">return</span> $deferred.promise(); <span class="comment">// now safe</span>
+}
+
+$(<span class="string">'input'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>{
+  getDelayedUserInput().done(<span class="function"><span class="keyword">function</span>(<span class="params">user_input</span>)</span>{
+    $(e.target).val(user_input);
+  });
+});
+</code></pre>
+<p><small><a href="http://jsbin.com/ocadol/4/edit">See on JSBin</a>.</small></p>

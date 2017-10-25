@@ -1,0 +1,32 @@
+<!-- .slide: data-state="contrasted" -->
+<h1 id="Once-upon-a-time…"><a href="#Once-upon-a-time…" class="headerlink" title="Once upon a time…"></a>Once upon a time…</h1><footer>(when I was a PHP developer…)</footer>
+
+<p>@@@</p>
+<!-- .slide: data-background="images/code-to-deploy.png" -->
+<p>@@@</p>
+<pre><code class="sh">scp -Cr ./src production:/var/www/my-cool-website
+</code></pre>
+<p>@@@</p>
+<!-- .slide: data-background="images/cat.gif" -->
+<p>@@@</p>
+<!-- .slide: data-background="images/deploy-broken.png" -->
+<p>@@@</p>
+<h2 id="Multiple-points-of-failure"><a href="#Multiple-points-of-failure" class="headerlink" title="Multiple points of failure"></a><em>Multiple</em> points of failure</h2><ul>
+<li>software (typo) <!-- .element: class="fragment" --></li>
+<li>transfer (incomplete, no gatekeeper) <!-- .element: class="fragment" --></li>
+<li>execution (runtime failure) <!-- .element: class="fragment" --></li>
+<li>host system itself <!-- .element: class="fragment" --></li>
+</ul>
+<p>@@@</p>
+<!-- .slide: data-state="contrasted" -->
+<h2 id="Not-reproducible-because-hardly-repeatable"><a href="#Not-reproducible-because-hardly-repeatable" class="headerlink" title="Not reproducible because hardly repeatable"></a>Not <em>reproducible</em> because hardly <em>repeatable</em></h2><p>@@@</p>
+<h2 id="What-“install-PHP5“-means"><a href="#What-“install-PHP5“-means" class="headerlink" title="What “install PHP5“ means"></a>What “<em>install PHP5</em>“ means</h2><pre><code class="bash"><span class="comment"># Ubuntu</span>
+$ apt-get install php5 libapache2-mod-php5 php5-curl
+$ php --version
+&gt; PHP 5.5.9 (cli)
+
+<span class="comment"># CentOS 6</span>
+$ yum install php curl curl-devel
+$ php --version
+&gt; PHP 5.4.16 (cli)
+</code></pre>

@@ -1,0 +1,40 @@
+<!-- .slide: data-state="contrasted" -->
+<h1 id="2-Element-graphique"><a href="#2-Element-graphique" class="headerlink" title="#2 Élément graphique"></a>#2 Élément <strong>graphique</strong></h1><p>@@@</p>
+<p><img src="images/tile.png" alt=""></p>
+<p>@@@</p>
+<p><img src="images/card.png" alt=""></p>
+<p>@@@</p>
+<p><img src="images/oneliner.png" alt=""></p>
+<p>@@@</p>
+<pre><code class="javascript"><span class="keyword">import</span> { Cover } <span class="keyword">from</span> <span class="string">'@project/element'</span>
+
+React.render(Cover, { … })
+</code></pre>
+<p>@@@</p>
+<h2 id="Autonomie"><a href="#Autonomie" class="headerlink" title="Autonomie"></a><strong>Autonomie</strong></h2><p>On <em>embarque</em> CSS, images et outillage.</p>
+<p>@@@</p>
+<pre><code class="javascript"><span class="built_in">require</span>(<span class="string">'./cover.scss'</span>);
+
+<span class="keyword">import</span> { Component } <span class="keyword">from</span> <span class="string">'react'</span>;
+
+exports <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Cover</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>{
+  render (){
+    <span class="keyword">let</span> className = <span class="keyword">this</span>.state.active ? <span class="string">'active'</span> : <span class="string">''</span>;
+
+    <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">{className}</span>&gt;</span></span>
+<span class="xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>{this.props.title}<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>
+<span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>);
+  }
+}
+</code></pre>
+<p>@@@</p>
+<h2 id="browserify-all-the-way"><a href="#browserify-all-the-way" class="headerlink" title="browserify all the way!"></a><strong>browserify</strong> all the way!</h2><p><em>transforms</em> isolés et chainables.</p>
+<p>@@@</p>
+<!-- .slide: data-background="images/npm-private-registry.png" data-state="background-light" -->
+<h2 id="npm-publish"><a href="#npm-publish" class="headerlink" title="npm publish"></a><code>npm publish</code></h2><p>~~~~</p>
+<p><code>.npmrc</code> pour cibler le registre privé.</p>
+<p>@@@</p>
+<blockquote>
+<p>C’est comme ça que j’aimerais travailler sur tous mes projets.</p>
+</blockquote>
+<p>— Diego, UI designer</p>
