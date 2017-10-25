@@ -1,0 +1,34 @@
+<!-- .slide: data-state="contrasted" -->
+<h1 id="3-WebApp"><a href="#3-WebApp" class="headerlink" title="#3 WebApp"></a>#3 WebApp</h1><p>@@@</p>
+<p><img src="images/webapp.png" alt=""></p>
+<p>@@@</p>
+<pre><code class="bash">PORT=3000 npm start
+
+<span class="comment"># static -p ${PORT:-5000} --gzip dist/</span>
+</code></pre>
+<p>@@@</p>
+<h2 id="stdin-env-variables"><a href="#stdin-env-variables" class="headerlink" title="stdin = env variables"></a><code>stdin</code> = env variables</h2><p>@@@</p>
+<h2 id="stdout-i-o"><a href="#stdout-i-o" class="headerlink" title="stdout = i/o"></a><code>stdout</code> = i/o</h2><p>HTTP responses.</p>
+<p>@@@</p>
+<h2 id="stderr-varies"><a href="#stderr-varies" class="headerlink" title="stderr = varies"></a><code>stderr</code> = <em>varies</em></h2><p>HTTP error codes, SEGFAULT, network misconfiguration. </p>
+<p>@@@</p>
+<h2 id="State-varies"><a href="#State-varies" class="headerlink" title="State = varies"></a>State = <em>varies</em></h2><p>In memory, data store, ephemeral files.</p>
+<pre><code>
+Nothing guarantees its integrity.
+
+@@@
+
+## Reproducibility = *should*
+
+Same args should produce same result. Depends of integrity.
+
+@@@
+
+## `npm install`
+
+Cannot be guaranteed.
+</code></pre><p>Package version can be deleted, semver madness, registry can be down.</p>
+<p>@@@</p>
+<h2 id="npm-shrinkwrap"><a href="#npm-shrinkwrap" class="headerlink" title="npm shrinkwrap"></a><code>npm shrinkwrap</code></h2><p>Guarantees exact same version.</p>
+<p>@@@</p>
+<h2 id="npm-pack"><a href="#npm-pack" class="headerlink" title="npm pack"></a><code>npm pack</code></h2><p>Guarantees exact same artefacts.</p>
