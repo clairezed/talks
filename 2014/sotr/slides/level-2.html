@@ -1,0 +1,301 @@
+<h2 id="Level-2-everyday-configuration"><a href="#Level-2-everyday-configuration" class="headerlink" title="Level 2: everyday configuration"></a>Level 2: everyday configuration</h2><!-- .slide: data-background="images/week3.png" -->
+<pre><code>
+Now we are using Grunt, you might need to scale its usage within your working group.
+
+Next up are tips and organisation tricks based on my experience and on a two weeks spike at BBC News. It is not meant to be exhaustive: I just like them because they are simple and easy to remember. Thus to reproduce over and over.
+
+@@@
+
+&lt;!-- .slide: data-state=&quot;contrasted&quot; --&gt;
+
+## Logical target naming
+
+@@@
+
+```javascript
+grunt.initConfig({
+  less: {
+    all: {
+      src: [&apos;src/**/*.css&apos;],
+      dest: &apos;dist/all.min.css&apos;,
+      options: { compress: true }
+    }
+  }
+});
+```
+</code></pre><p>Having a single target is easy and fast to write at first.</p>
+<p>It can become long and tedious to maintain on the long run.</p>
+<p>@@@</p>
+<pre><code class="javascript">grunt.initConfig({
+  less: {
+    all: {
+      src: [
+        <span class="string">'bower_components/**/*.less'</span>,
+        <span class="string">'!doc/**/*.less'</span>,
+        <span class="string">'src/**/*.less'</span>,
+        <span class="string">'src/**/*.css'</span>,
+        <span class="string">'!src/vendor/doc.less'</span>
+      ],
+      dest: <span class="string">'dist/all.min.css'</span>,
+      options: { <span class="attr">compress</span>: <span class="literal">true</span> }
+    }
+  }
+});
+</code></pre>
+<pre><code>
+It is better to reflect the intent of a target.
+The UNIX-style filename patterns are also here to keep things simple.
+
+@@@
+
+```javascript
+grunt.initConfig({
+  less: {
+    files: {
+      &apos;dist/main.min.css&apos;: [
+        &apos;src/stylesheets/**/*.{css,less}&apos;
+      ],
+      &apos;dist/vendors.min.css&apos;: [
+        &apos;bower_components/**/*.less&apos;,
+        &apos;src/vendor/*.less&apos;,
+        &apos;!src/vendor/doc.less&apos;
+      ]
+    },
+    options: { compress: true }
+  }
+});
+```
+
+@@@
+
+&lt;!-- .slide: data-state=&quot;contrasted&quot; --&gt;
+
+## Task alias and execution order
+</code></pre><p>The next step after the target are the tasks.</p>
+<p>@@@</p>
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><pre><code class="javascript">grunt.registerTask(<span class="string">'build-assets'</span>, [<span class="string">'less'</span>, <span class="string">'uglify'</span>]);
+</code></pre>
+<pre><code>
+You can create your own simply by referring to the existing ones name.
+
+In that case, `build-assets` will obviously care about building he assets for your frontend. Through its name, you know that task&apos;s responsibility is to do so.
+
+You do not necessarily need to call all the targets of a task as well.
+
+@@@
+
+## Fine grained configuration
+
+```javascript
+grunt.registerTask(&apos;build-front&apos;, [&apos;less:frontend&apos;, &apos;uglify:frontend&apos;, &apos;jshint&apos;, &apos;karma&apos;]);
+```
+</code></pre><p>And again, as the things grow up, we might want to either reduce the time or to not repeat all the tasks, all the time.</p>
+<p>So we can split them up as <em>full</em> tasks and <em>fast</em> tasks.</p>
+<p>@@@</p>
+<h2 id="Full-and-fast-tasks"><a href="#Full-and-fast-tasks" class="headerlink" title="Full and fast tasks"></a>Full and fast tasks</h2><pre><code class="javascript">grunt.registerTask(<span class="string">'deploy-fast'</span>, [<span class="string">'rsync:production'</span>]);
+
+grunt.registerTask(<span class="string">'deploy'</span>, [<span class="string">'build-assets'</span>, <span class="string">'deploy-fast'</span>, <span class="string">'cleanup'</span>]);
+</code></pre>
+<pre><code>
+The fast tasks are supposed to be triggered manually.
+Because you know you satisfy the prerequisites.
+Because you want to save some unneeded extra seconds of processing.
+
+@@@
+
+&lt;!-- .slide: data-state=&quot;contrasted&quot; --&gt;
+
+## Logical task file organisation
+</code></pre><p>We do all our best to keep things as small as possible but sometimes, you end up doing really a lot of things in a Gruntfile.</p>
+<p>You have several options to reduce the overall size of a Gruntfile.</p>
+<p>@@@</p>
+<h2 id="Several-Gruntfiles"><a href="#Several-Gruntfiles" class="headerlink" title="Several Gruntfiles"></a>Several Gruntfiles</h2><pre><code class="bash">grunt --gruntfile Gruntfile-production.js
+grunt --gruntfile config/grunt/frontend.js
+</code></pre>
+<pre><code>
+You can either have several Gruntfiles.
+Each one can represent separate environments, different topics or whatsoever.
+
+Organise them in a way which truly speaks within your team.
+
+@@@
+
+## Modular Gruntfile
+
+```javascript
+grunt.initConfig({
+  less: require(&apos;./grunt/less.js&apos;),
+  watch: require(&apos;./grunt/watch.js&apos;)
+});
+```
+</code></pre><p>Another solution is to keep a single Gruntfile and to split its content.</p>
+<p>As a reminder, a Gruntfile is JavaScript and the <code>grunt.initConfig</code> expects to receive a JavaScript.</p>
+<p>So we only need to care about providing a JavaScript object as a configuration file, really.</p>
+<p>@@@</p>
+<h2 id="Domain-based-modular-Gruntfile"><a href="#Domain-based-modular-Gruntfile" class="headerlink" title="Domain based modular Gruntfile"></a>Domain based modular Gruntfile</h2><pre><code class="javascript">grunt.initConfig([
+  <span class="built_in">require</span>(<span class="string">'./grunt/frontend.js'</span>),
+  <span class="built_in">require</span>(<span class="string">'./grunt/performance.js'</span>),
+  <span class="built_in">require</span>(<span class="string">'./grunt/deploy.js'</span>),
+].reduce(_.merge, {});
+</code></pre>
+<pre><code>
+If you want to organise your files in a domain-oriented fashion,  we can split up the configuration this way and augment the configuration object.
+
+This way, each required file would return a JavaScript object which would be merged with the previous one.
+
+This approach is naive but you get the idea of what you can do.
+
+@@@
+
+&lt;!-- .slide: data-state=&quot;contrasted&quot; --&gt;
+
+## Variables
+</code></pre><p>As the name states, a variable is a way to store a reusable value in different places.</p>
+<p>@@@</p>
+<pre><code class="javascript">grunt.initConfig({
+  less: {
+    main: {
+      src: <span class="string">'src/**/*.less'</span>,
+      dest: <span class="string">'dist/assets/main.css'</span>
+    }
+  },
+  watch: {
+    stylesheets: {
+      src: <span class="string">'&lt;%= less.main.src %&gt;'</span>,
+      tasks: [<span class="string">'less'</span>]
+    }
+  }
+});
+</code></pre>
+<pre><code>
+As they are evaluated after the `initConfig` step, it means you have access to every other part of the Gruntfile configuration at any moment.
+
+@@@
+
+## Variables in globbing patterns
+
+```javascript
+grunt.initConfig({
+  now: (new Date).getFullYear(),
+  folders: &apos;{2008..&lt;%= now %&gt;}&apos;,
+
+  // …
+});
+```
+</code></pre><p>You can define your own variables and use them in globbing patterns for instance</p>
+<p>@@@</p>
+<h2 id="Over-and-over…"><a href="#Over-and-over…" class="headerlink" title="Over and over…"></a>Over and over…</h2><pre><code class="javascript">grunt.initConfig({
+  now: (<span class="keyword">new</span> <span class="built_in">Date</span>).getFullYear(),
+  folders: <span class="string">'{2008..&lt;%= now %&gt;}'</span>,
+  assemble: {
+    slides: {
+      src: <span class="string">'&lt;%= folders %&gt;/*/index.md'</span>,
+      dest: <span class="string">'dist/'</span>
+    }
+  },
+  mdlint: {
+    all: { <span class="attr">src</span>: <span class="string">'&lt;%= assemble.slides.src %&gt;'</span> }
+  }
+});
+</code></pre>
+<p>@@@</p>
+<h2 id="Command-line-variables"><a href="#Command-line-variables" class="headerlink" title="Command line variables"></a>Command line variables</h2><pre><code class="javascript">grunt.initConfig({
+  year: grunt.option(<span class="string">'year'</span>) || <span class="string">'*'</span>,
+
+  assemble: {
+    posts: {
+      src: <span class="string">'src/&lt;%= year %&gt;/*.md'</span>,     
+      dest: <span class="string">'dist/'</span>
+    }
+  }
+});
+</code></pre>
+<pre><code>
+Grunt exposes the `grunt.option` API 
+Did you know the `&lt;%= templates %&gt;` are evaluated JavaScript expressions?
+
+So you could use that to reduce the amount of processed documents.
+
+@@@
+
+```bash
+# everything
+grunt assemble
+
+# just 2014 blog posts
+grunt assemble --year=2014
+```
+</code></pre><p>So we could regenerate all the blog posts or only a subset of them based on a year value.</p>
+<p>@@@</p>
+<h2 id="Alternative-command-line"><a href="#Alternative-command-line" class="headerlink" title="Alternative command line"></a>Alternative command line</h2><pre><code class="bash">grunt assemble:posts:2014
+</code></pre>
+<p>@@@</p>
+<pre><code class="javascript">grunt.initConfig({
+  assemble: {
+    year: <span class="string">'&lt;%= grunt.task.current.args[0] || "*" %&gt;'</span>,
+
+    posts: {
+      src: <span class="string">'src/&lt;%= year %&gt;/*.md'</span>,     
+      dest: <span class="string">'dist/'</span>
+    }
+  }
+});
+</code></pre>
+<p>@@@</p>
+<!-- .slide: data-state="contrasted" -->
+<h2 id="Asynchronous-task-loading"><a href="#Asynchronous-task-loading" class="headerlink" title="Asynchronous task loading"></a>Asynchronous task loading</h2><pre><code>
+Grunt 0.4 performs a lot of actions in a blocking fashion.
+
+If your Gruntfile starts to become massive, running a task can become slow just because Grunt needs to load every task before being able to run one. Every. Single. Time.
+
+@@@
+
+## From
+
+```javascript
+grunt.loadNpmTasks(&apos;grunt-contrib-imagemin&apos;);
+grunt.registerTask(&apos;images&apos;, [&apos;copy:standardImages&apos;, &apos;responsive_images&apos;, &apos;imagemin&apos;]);
+```
+
+## To
+
+```javascript
+grunt.registerTask(&apos;images&apos;, [], function () {
+    grunt.loadNpmTasks(&apos;grunt-contrib-imagemin&apos;);
+    grunt.task.run(&apos;copy:standardImages&apos;, &apos;responsive_images&apos;, &apos;imagemin&apos;);
+});
+```
+</code></pre><p><a href="https://github.com/gruntjs/grunt/issues/975#issuecomment-29058707">As coined by Tom Maslen</a> in the Grunt issue #975: simply create a task which registers the heavy ones.</p>
+<p>@@@</p>
+<h2 id="jit-grunt"><a href="#jit-grunt" class="headerlink" title="jit-grunt"></a><code>jit-grunt</code></h2><p>Automatic task lazy loading.</p>
+<pre><code>
+Otherwise, `jit-grunt` is an npm package which will auto load your grunt plugins when they are needed.
+
+&gt; https://github.com/shootaroo/jit-grunt
+
+@@@
+
+&lt;!-- .slide: data-state=&quot;contrasted&quot; --&gt;
+
+## Parallel tasks
+
+@@@
+
+&lt;!-- .slide: data-background=&quot;images/compiling.png&quot; --&gt;
+</code></pre><p>Sometimes you also wait (and waste time) because some tasks are long and performed sequentially. If they do not rely on each other, run them in parallel to save time.</p>
+<p>I mean, why waiting for your Sass files to be compiled before processing your images, or your JavaScript?</p>
+<p>@@@</p>
+<h2 id="grunt-concurrent"><a href="#grunt-concurrent" class="headerlink" title="grunt-concurrent"></a><code>grunt-concurrent</code></h2><pre><code class="javascript">grunt.initConfig({
+  concurrent: {
+    frontend: [
+      <span class="string">'sass:main'</span>,
+      <span class="string">'sass:widgets'</span>,
+      <span class="string">'assemble:posts'</span>
+    ],
+    deploy: [
+      <span class="string">'rsync:aws'</span>,
+      <span class="string">'rsync:ssh'</span>
+    ]
+  }
+});
+</code></pre>

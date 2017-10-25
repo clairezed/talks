@@ -1,0 +1,26 @@
+<h2 id="Level-1-not-using-Grunt"><a href="#Level-1-not-using-Grunt" class="headerlink" title="Level 1: not using Grunt"></a>Level 1: <em>not</em> using Grunt</h2><p>@@@</p>
+<h2 id="Tasks-without-a-task-runner"><a href="#Tasks-without-a-task-runner" class="headerlink" title="Tasks without a task runner?"></a>Tasks <em>without</em> a task runner?</h2><pre><code>
+What if we would not use grunt for simple tasks.
+
+A simple task is an action which has only a couple of different configurations.
+
+Anybody knows a good alternative for that?
+
+@@@
+
+## `npm run`
+</code></pre><p>Simple. Native. Less dependencies. Easier configuration.</p>
+<p>@@@</p>
+<h2 id="npm-vs-grunt-http"><a href="#npm-vs-grunt-http" class="headerlink" title="npm vs grunt-http"></a><code>npm</code> vs <code>grunt-http</code></h2><p>~~~~</p>
+<p>Yesterday someone talked about <code>grunt-http</code>. This is something you can do without grunt.</p>
+<p>@@@</p>
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><pre><code class="javascript"><span class="comment">/* package.json */</span>
+{
+  <span class="string">"scripts"</span>: {
+    <span class="string">"reload"</span>: <span class="string">"curl --head http://coldfusion-host:8000/cfm?action=reload"</span>
+  }
+}
+</code></pre>
+<p>@@@</p>
+<h2 id="Running-the-task"><a href="#Running-the-task" class="headerlink" title="Running the task"></a>Running the task</h2><pre><code class="bash">npm run reload
+</code></pre>
