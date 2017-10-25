@@ -21,9 +21,9 @@ exports <span class="keyword">default</span> <span class="class"><span class="ke
   render (){
     <span class="keyword">let</span> className = <span class="keyword">this</span>.state.active ? <span class="string">'active'</span> : <span class="string">''</span>;
 
-    <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">{className}</span>&gt;</span></span>
-<span class="xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>{this.props.title}<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>
-<span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>);
+    <span class="keyword">return</span> (&lt;div className={className}&gt;
+      &lt;h1&gt;{this.props.title}&lt;/h1&gt;
+    &lt;/div&gt;);
   }
 }
 </code></pre>
