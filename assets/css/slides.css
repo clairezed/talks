@@ -1513,3 +1513,11 @@ body {
   position: absolute;
   width: 100%;
 }
+.reveal [data-state="random"] h1,
+.reveal [data-state="random"] h2,
+.reveal [data-state="random"] h3,
+.reveal [data-state="random"] h4,
+.reveal [data-state="random"] h5,
+.reveal [data-state="random"] p {
+  font-family: inherit;
+}
