@@ -1,4 +1,5 @@
-<h1>Merci !<em>*</em></h1>
+# Merci !*\**
+
 <footer>
 \* *en français dans le texte*
 <footer>
