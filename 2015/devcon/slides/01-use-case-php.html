@@ -1,0 +1,35 @@
+<!-- .slide: data-state="contrasted" -->
+<h1>Once upon a time…</h1>
+<footer>(when I was a PHP developer…)</footer>
+<p>@@@</p>
+<!-- .slide: data-background="images/code-to-deploy.png" -->
+<p>@@@</p>
+<pre><code class="language-sh">scp -Cr ./src production:/var/www/my-cool-website
+</code></pre>
+<p>@@@</p>
+<!-- .slide: data-background="images/cat.gif" -->
+<p>@@@</p>
+<!-- .slide: data-background="images/deploy-broken.png" -->
+<p>@@@</p>
+<h2 id="multiple-points-of-failure"><em>Multiple</em> points of failure</h2>
+<ul>
+<li>software (typo) <!-- .element: class="fragment" --></li>
+<li>transfer (incomplete, no gatekeeper) <!-- .element: class="fragment" --></li>
+<li>execution (runtime failure) <!-- .element: class="fragment" --></li>
+<li>host system itself <!-- .element: class="fragment" --></li>
+</ul>
+<p>@@@</p>
+<!-- .slide: data-state="contrasted" -->
+<h2 id="not-reproducible-because-hardly-repeatable">Not <em>reproducible</em> because hardly <em>repeatable</em></h2>
+<p>@@@</p>
+<h2 id="what-install-php5-means">What &quot;<em>install PHP5</em>&quot; means</h2>
+<pre><code class="language-bash"># Ubuntu
+$ apt-get install php5 libapache2-mod-php5 php5-curl
+$ php --version
+&gt; PHP 5.5.9 (cli)
+
+# CentOS 6
+$ yum install php curl curl-devel
+$ php --version
+&gt; PHP 5.4.16 (cli)
+</code></pre>
