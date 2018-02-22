@@ -1,0 +1,37 @@
+<h2 id="pull-request-3">Pull Request #3</h2>
+<p>@@@</p>
+<pre><code class="language-javascript">grunt.initConfig({
+  sass: {
+    /* content dynamically generated */
+  },
+  generateJS: {
+    dest: '&lt;%= dir.static_js %&gt;/module/translations/',
+    src: 'https://docs.google.com/spreadsheet/pub?key=xxx&amp;output=csv'
+  },
+  generateINI: {
+    dest: './core/src/main/BBC/News/Translation/',
+    src: 'https://docs.google.com/spreadsheet/pub?key=xxx&amp;output=csv'
+  }
+});
+
+grunt.registerTask('default', ['jshint', 'sass_compile:dev']);
+</code></pre>
+<p>@@@</p>
+<h2 id="analyse">Analyse</h2>
+<ul>
+<li>17 tâches maison</li>
+<li>des “surtâches”</li>
+<li>des potentiels doublons pour “faire juste ce qu’on veut”</li>
+<li>des configurations implicites</li>
+</ul>
+<p>@@@</p>
+<h2 id="bref">Bref</h2>
+<h3 id="envie-de-tout-réécrire"><em>Envie de tout réécrire</em></h3>
+<p>Syndrôme classique ;-)</p>
+<p>@@@</p>
+<h2 id="objectifs">Objectifs</h2>
+<h3 id="challenger-l-idée-par-l-équipe"><em>Challenger</em> l’idée par l’équipe</h3>
+<h3 id="ouvrir-la-pr-le-plus-tôt-possible">Ouvrir la PR le plus tôt possible</h3>
+<p>Permet de susciter des remarques des principaux intéressés.</p>
+<h3 id="améliorer-la-qualité">Améliorer la qualité</h3>
+<p>Et éduquer par l’exemple.</p>
