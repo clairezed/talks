@@ -1,5 +1,0 @@
-
-## RDD
-
-### README Driven Development
-
